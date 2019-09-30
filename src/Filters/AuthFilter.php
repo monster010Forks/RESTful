@@ -23,23 +23,7 @@
          */
         public function before(RequestInterface $request)
         {
-            // Load the auth helper
-            helper('RESTful\Auth');
-            $auth = auth_service();
-
-            // If we have a configured auth type and are not authenticated
-            if ($this->config->authType !== 'none' && !$auth->isAuthenticated()) {
-
-                // Shared response service
-                $response = \Config\Services::response();
-
-                // If not, generate the response
-                $response
-                    ->setStatusCode(HTTP_UNAUTHORIZED)
-                    ->setJSON([ 'message' => 'Unauthorized Access' ])
-                    ->send();
-                exit();
-            }
+            // Do something here
         }
 
         //--------------------------------------------------------------------
