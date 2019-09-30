@@ -1,0 +1,18 @@
+{
+  "name": "jason-napolitano/restful",
+  "type": "library",
+  "description": "A REST based package for CodeIgniter 4!",
+  "homepage": "https://github.com/jason-napolitano/RESTful",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "RESTful\\": "./src"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true
+  }
+}
