@@ -28,6 +28,10 @@ This module only requires CodeIgniter 4 to be installed and configured
 
 # Features
 Included features are:  
+
+ - **Bin/Config**
+   - Default configuration files that you may copy to your projects `app/Config` directory for the modules
+   configuration
  - **Controller**
    - A basic controller that extends the `ResourceController` and bakes in a little bit more
    functionality
