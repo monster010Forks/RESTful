@@ -2,7 +2,6 @@
 
     use CodeIgniter\RESTful\ResourceController;
     use CodeIgniter\Session\Session;
-    use RESTful\Config\RESTful;
 
     /**
      * Class Controller
@@ -34,13 +33,6 @@
          */
         protected $session;
 
-        /**
-         * Config object
-         *
-         * @var \RESTful\Config\RESTful
-         */
-        public $config;
-
         // --------------------------------------------------------------------
 
         /**
@@ -60,7 +52,6 @@
 
             // Application configuration
             $this->session = session();
-            $this->config  = config(RESTful::class, true);
         }
 
         // --------------------------------------------------------------------
