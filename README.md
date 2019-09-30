@@ -1,5 +1,7 @@
 # Introducing RESTful!
-A REST based package for CodeIgniter 4.
+A REST based package for CodeIgniter 4. 
+
+_UNDER CURRENT DEVELOPMENT. NOT READY FOR PRODUCTION USE!_
 
 # Synopsis
 A REST based package for CodeIgniter 4 that aims to handle the basics of a REST based API, allowing users to easily 
