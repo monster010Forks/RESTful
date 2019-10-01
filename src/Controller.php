@@ -53,7 +53,7 @@
         public function __construct()
         {
             // Default application helpers
-            $app_helpers = ['RESTful\REST', 'RESTful\JWT'];
+            $app_helpers = ['RESTful\REST', 'RESTful\JWT', 'RESTful\Auth'];
 
             // Merge $app_helpers with $this->helpers
             $helpers = array_merge($this->helpers, $app_helpers);
