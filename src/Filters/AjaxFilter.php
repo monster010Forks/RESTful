@@ -27,10 +27,8 @@
             if ($this->config->ajaxOnly === true) {
                 // Shared response service
                 $response = \Config\Services::response();
-
                 // Is the request valid AJAX?
                 if ( ! $request->isAJAX()) {
-
                     // If not, generate the response
                     $response
                         ->setStatusCode(HTTP_BAD_REQUEST)
