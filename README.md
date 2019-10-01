@@ -42,9 +42,10 @@ Included features are:
    - The `AuthFilter` handles the authentication for `Basic` and `JWT` authentication
    - The `CorsFilter` checks a few CORS configuration options and responds accordingly
   
- - **Helper**
-   - A useful helper file is included as well. This file can help with tasks such as JWT decoding/encoding, trimming arrays, moving files and more!
-     - _This helper is autoloaded when a controller class_ `extends \RESTful\Controller`  
+ - **Helpers**
+   - A series of useful helper files are included as well. These include String Helpers, Array Helpers, Object Helpers, JWT Helpers, an 
+   Auth Helper and more!
+     - _The `\RESTful\REST`, `\RESTful\Auth` and `\RESTful\JWT` helpers are autoloaded when a controller class_ `extends \RESTful\Controller`  
        
   - **Language**
     - Language files are included for easier module translation
