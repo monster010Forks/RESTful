@@ -31,9 +31,7 @@
          *
          * @var array $corsDomains
          */
-        public $corsDomains = [
-            'http://localhost'
-        ];
+        public $corsDomains = [];
 
         /**
          * Authentication options are:
