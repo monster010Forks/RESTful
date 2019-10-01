@@ -1,6 +1,9 @@
 <?php namespace RESTful {
 
+    use App\Models\UserModel;
     use CodeIgniter\RESTful\ResourceController;
+    use RESTful\Config\RESTful as DefaultConfig;
+    use Config\RESTful as UserConfig;
     use CodeIgniter\Session\Session;
 
     /**
@@ -20,7 +23,7 @@
         /**
          * Database model object
          *
-         * @var mixed $model
+         * @var object $model
          */
         protected $model;
 
@@ -32,6 +35,14 @@
          * @var Session $session
          */
         protected $session;
+
+        /**
+         * Config object [User Defined Config or Default Module Config]. Based
+         * on class_exists(). No need to modify this value
+         *
+         * @var UserConfig|DefaultConfig
+         */
+        public $config;
 
         // --------------------------------------------------------------------
 
@@ -50,8 +61,18 @@
             // Load the application helper files
             helper($helpers);
 
+            $this->model = new UserModel();
+
             // Application configuration
             $this->session = session();
+
+            // Select which config file to use
+            class_exists(UserConfig::class)
+                ? $configClass = UserConfig::class
+                : $configClass = DefaultConfig::class; // Default Module Config
+
+            // Load the correct shared config class
+            $this->config = config($configClass, true);
         }
 
         // --------------------------------------------------------------------
