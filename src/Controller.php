@@ -61,8 +61,6 @@
             // Load the application helper files
             helper($helpers);
 
-            $this->model = new UserModel();
-
             // Application configuration
             $this->session = session();
 
