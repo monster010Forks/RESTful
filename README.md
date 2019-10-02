@@ -1,65 +1,64 @@
-# Introducing RESTful!
-A REST based package for CodeIgniter 4. 
-
-_UNDER CURRENT DEVELOPMENT. NOT READY FOR PRODUCTION USE!_
-
 # Synopsis
 A REST based package for CodeIgniter 4 that aims to handle the basics of a REST based API, allowing users to easily 
 manipulate their API's behavior by simply modifying the modules configuration options.
+ - **IMPORTANT NOTE:** _This repo is under current development and is NOT YET READY FOR PRODUCTION USE_
 
 # TOC (Table of contents) 
- - Synopsis
- - Credits
- - Requirements
- - Features
- - Installation
- - Usage
- - License
+ - [Synopsis](#synopsis)
+ - [Credits](#credits)
+ - [Requirements](#requirements)
+ - [Features](#features)
+ - [Installation](#installation)
+ - [Usage](#usage)
+ - [License](#license)
 
 # Credits
-|    DEVELOPER NAME    |  LINK  |
-|----------------------|--------|
-| CodeIgniter and BCIT | Github |
-|     Lonnie Ezell     | Github |
+A huge thanks goes to these following developers and organizations. Without their hard work and dedication this package would not at all be possible.
+
+|    DEVELOPER NAME    |                   LINK                    |
+|----------------------|-------------------------------------------|
+| CodeIgniter and BCIT | [Github](https://github.com/codeigniter4) |
+|     Lonnie Ezell     | [Github](https://github.com/lonnieezell)  |
 
 # Requirements
 This module only requires CodeIgniter 4 to be installed and configured
-   - This page may help you get up and running if you're not already.
+   - [This page may help you get up and running if you're not already.](https://codeigniter4.github.io/userguide/installation/index.html)
 
 # Features
-Included features are:  
+The features included in this module are:  
 
- - **Bin/Config**
+ - **Bin/Config** _[View Src Tree](https://github.com/jason-napolitano/RESTful/tree/master/bin/Config)_
    - Default configuration files that you may copy to your projects `app/Config` directory for the modules
    configuration
- - **Controller**
+ - **Controller** _[View Src File](https://github.com/jason-napolitano/RESTful/blob/master/src/Controller.php)_
    - A basic controller that extends the `ResourceController` and bakes in a little bit more
    functionality
    
- - **Filters**
+ - **Filters** _[View Src Tree](https://github.com/jason-napolitano/RESTful/tree/master/src/Filters)_
    - The `AjaxFilter` acts on AJAX requests based upon the `$ajaxOnly` config 
    option
    - The `AuthFilter` handles the authentication for `Basic` and `JWT` authentication
    - The `CorsFilter` checks a few CORS configuration options and responds accordingly
   
- - **Helpers**
+ - **Helpers** _[View Src Tree](https://github.com/jason-napolitano/RESTful/tree/master/src/Helpers)_
    - A series of useful helper files are included as well. These include String Helpers, Array Helpers, Object Helpers, JWT Helpers, an 
    Auth Helper and more!
      - _The `\RESTful\REST`, `\RESTful\Auth` and `\RESTful\JWT` helpers are autoloaded when a controller class_ `extends \RESTful\Controller`  
        
-  - **Language**
+  - **Language** _[View Src Tree](https://github.com/jason-napolitano/RESTful/tree/master/src/Language)_
     - Language files are included for easier module translation
   
- - **Libraries**
+ - **Libraries** _[View Src Tree](https://github.com/jason-napolitano/RESTful/tree/master/src/Libraries)_
    - JWT Library for encoding and decoding of JSON Web Tokens (JWT's)
      
- - **Services**:
-   - `RESTful\Services\Auth` are authentication services which are called in the `AuthFilter` and can be called globally like so:
+ - **Services**: _[View Src Tree](https://github.com/jason-napolitano/RESTful/tree/master/src/Services)_
+   - `RESTful\Services\Auth` contains authentication services which are called in the `AuthFilter` and can be called globally like so:
       - `$auth = \Config\Services::auth($type = 'none', $getShared = false); ` 
       - `$auth = service('auth', $type = 'none', $getShared = false); `
         - Types included are `'basic'`, `'jwt'`, `'none'`/`null`
     
 # Installation
+_NOTE: Please make sure to [install and configure CodeIgniter 4](#requirements) before performing the installation_
 
 ## Require
  ```php
@@ -70,16 +69,16 @@ $ composer require jason-napolitano/restful
 ## Autoload
 ```php
 $psr4 = [
-    // OTHER ENTIRES ...
+    // OTHER PSR-4 ENTRIES ...
     'RESTful' => ROOTPATH . 'vendor/jason-napolitano/restful/src',
 ]
 ```
 
 ## Configure
- - Move the `bin/Config/RESTful.php` file to your projects `app/Config` directory
- - Move the `bin/Config/Filters.php` file to your projects `app/Config` directory
- - Configure your applications database settings in your applications `.env` file
- - From your projects `ROOTPATH`, run the `php spark migrate:latest -all` command
+ - Move the `bin/Config/RESTful.php` file to your projects `app/Config` directory. This is a required step to configure this module
+ - Move the `bin/Config/Filters.php` file to your projects `app/Config` directory or merge with the existing `Filters` file if desired
+ - Configure your applications database settings in your applications `.env` file. This is optional if you plan to use Digest Authentication (coming soon)
+ - From your projects `ROOTPATH`, run the `php spark migrate:latest -all` command. This is optional in order to populate your database with the correct tables for authentication and sessions.
 
 # Usage
  - Modify your newly moved `app/Config/RESTful.php` for the aforementioned features
