@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This is a helper file for the RESTful module
+ * This is the primary helper file for the RESTful module
  *
  * @package  RESTful\Helpers
  * @author   Jason Napolitano <jnapolitanoit@gmail.com>
