@@ -32,10 +32,7 @@
          * @var array $corsDomains
          */
         public $corsDomains = [
-            // Localhost
             'http://localhost/',
-            'http://vueapp',
-            'http://vueapi'
         ];
 
         /**
