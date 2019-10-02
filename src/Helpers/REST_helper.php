@@ -22,7 +22,7 @@ if (!function_exists('ci_version')) {
      *
      * @return string
      */
-    function ci_version()
+    function ci_version(): string
     {
         return (new \CodeIgniter\CodeIgniter(null))::CI_VERSION;
     }
