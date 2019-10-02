@@ -1,6 +1,6 @@
 <?php namespace RESTful {
 
-    use App\Models\UserModel;
+    // CLASS/INTERFACE IMPORTS
     use CodeIgniter\RESTful\ResourceController;
     use RESTful\Config\RESTful as DefaultConfig;
     use Config\RESTful as UserConfig;
