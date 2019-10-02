@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This is a helper file the JWT library
+ * This is a helper file for the built-in JWT library
  *
  * @package  RESTful\Helpers
  * @author   Jason Napolitano <jnapolitanoit@gmail.com>
