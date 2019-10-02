@@ -14,7 +14,7 @@
     class Controller extends ResourceController
     {
         /**
-         * An empty data array for view variables
+         * An empty data array for response data
          *
          * @var array $data
          */
@@ -42,7 +42,7 @@
          *
          * @var UserConfig|DefaultConfig
          */
-        public $config;
+        protected $config;
 
         // --------------------------------------------------------------------
 
