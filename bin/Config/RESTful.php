@@ -23,15 +23,17 @@
          *
          * @var bool $enableCors
          */
-        public $enableCors = false;
+        public $enableCors = true;
 
         /**
-         * An array of domains allowed to make requests
-         * when $enableCors is set to TRUE
+         * An array of domains allowed to make requests when $enableCors
+         * is set to TRUE
          *
          * @var array $corsDomains
          */
-        public $corsDomains = [];
+        public $corsDomains = [
+            'http://localhost/',
+        ];
 
         /**
          * Authentication options are:
