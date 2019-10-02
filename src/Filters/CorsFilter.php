@@ -34,26 +34,20 @@
 
                 // Set the Access-Control-Allow-Origin header to all (*)
                 $response->setHeader('Access-Control-Allow-Origin', '*');
+                // header('Access-Control-Allow-Origin: *');
                 $allow_all = true;
+
+            // ELSE, do NOT allow all domains in Access-Control-Allow-Origin
             } else {
-                // Localhost array
-                $localhosts = [
-                    'http://localhost',
-                    '127.0.0.1'
-                ];
-                // Merge the config arrays
-                $merged_config = array_merge($domains, $localhosts);
-
-                // Get a string of merged array keys for $response->setHeader()
-                $these_domains = implode(', ', $merged_config);
-
-                // Set the Access-Control-Allow-Origin header to $these_domains
-                $response->setHeader('Access-Control-Allow-Origin', $these_domains);
                 $allow_all = false;
             }
 
-            // Handle the allowance of hosts when cors is enabled
+            // Handle the allowance of hosts when CORS is enabled
             if ($allow_all === false) {
+                // Set the Access-Control-Allow-Origin header for each domain in our config
+                foreach ($domains as $value) {
+                    $response->setHeader('Access-Control-Allow-Origin', $value);
+                }
                 // Get the 'Access-Control-Allow-Origin' value as a string
                 $domains = (string)$response->getHeader('Access-Control-Allow-Origin')->getValue();
 
@@ -66,16 +60,11 @@
                 // If we are not allowed
                 if ( ! $is_allowed) {
                     // Send the response and exit()
-                    $response
-                        ->setStatusCode(HTTP_UNAUTHORIZED)
-                        ->setJSON([
-                            'message' => 'Requests from this host are not allowed',
-                            'status'  => HTTP_UNAUTHORIZED
-                        ])
-                        ->send();
-                        exit();
+                    $response->setStatusCode(HTTP_UNAUTHORIZED)->send();
+                    exit();
                 }
             }
+
         }
 
         //--------------------------------------------------------------------
