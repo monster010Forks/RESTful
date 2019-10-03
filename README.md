@@ -61,12 +61,23 @@ The features included in this module are:
 _NOTE: Please make sure to [install and configure CodeIgniter 4](#requirements) before performing the installation_
 
 ## Require
+ - Use composer to require the package:
  ```php
 $ cd path/to/project/root
 $ composer require jason-napolitano/restful
 ```
+_You may also add this to your `composer.json` like so:_
+```json
+{
+    "require": {
+        "jason-napolitano/restful": "dev-master"
+    }
+}
+```
+_Then run `$ composer update` in your projects `ROOTPATH`_
 
 ## Autoload
+ - Add the following to the `$psr4` array in `app/Config/Autoload.php`:
 ```php
 $psr4 = [
     // OTHER PSR-4 ENTRIES ...
