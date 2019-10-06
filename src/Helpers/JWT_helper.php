@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This is a helper file for the built-in JWT library
+ * This is a helper file the JWT library
  *
  * @package  RESTful\Helpers
  * @author   Jason Napolitano <jnapolitanoit@gmail.com>
@@ -19,13 +19,15 @@ if (!function_exists('jwt_encode')) {
     /**
      * Encode a JWT
      *
-     * @param $payload
-     * @param $secretKey
+     * @param mixed  $payload
+     * @param string $secretKey
      *
      * @return string
      */
-    function jwt_encode($payload, $secretKey) {
-        return (new \RESTful\Libraries\JWT\JWT())::encode($payload, $secretKey);
+    function jwt_encode($payload, string $secretKey = null)
+    {
+        $config = class_exists(\Config\JWT::class)? new \Config\JWT(): new \RESTful\Config\JWT();
+        return (new \RESTful\Libraries\JWT\JWT())::encode($payload, $secretKey ?? $config->secretKey);
     }
 }
 
@@ -35,13 +37,16 @@ if (!function_exists('jwt_decode')) {
     /**
      * Decode a JWT
      *
-     * @param $jwtString
-     * @param $secretKey
+     * @param string $jwtString
+     * @param string $secretKey
      *
      * @return object
      */
-    function jwt_decode($jwtString, $secretKey)
+    function jwt_decode(string $jwtString, string $secretKey)
     {
         return (new \RESTful\Libraries\JWT\JWT())::decode($jwtString, $secretKey);
     }
 }
+
+// ----------------------------------------------------------------------------
+// If the function does not exist, let's create it!
