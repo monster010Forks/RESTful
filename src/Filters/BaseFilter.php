@@ -1,4 +1,7 @@
 <?php namespace RESTful\Filters {
+    
+    use Config\RESTful as UserConfig;
+    use RESTful\Config\RESTful as DefaultConfig;
 
     /**
      * Class BaseFilter
@@ -26,9 +29,9 @@
         public function __construct()
         {
             // Select which config file to use
-            class_exists(\Config\RESTful::class)
-                ? $configClass = \Config\RESTful::class          // Modules Config
-                : $configClass = \RESTful\Config\RESTful::class; // Default config
+            class_exists(UserConfig::class)
+                ? $configClass = UserConfig::class     // Users Config
+                : $configClass = DefaultConfig::class; // Default config
 
             // Load the correct shared config class
             $this->config = config($configClass, true);
