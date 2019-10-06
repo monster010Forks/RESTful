@@ -16,7 +16,7 @@
         /**
          * Configuration object
          *
-         * @var RESTful $config
+         * @var UserConfig|DefaultConfig $config
          */
         protected $config;
 
