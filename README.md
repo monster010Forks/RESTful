@@ -24,7 +24,12 @@ A huge thanks goes to these following developers and organizations. Without thei
 This module requires CodeIgniter 4 to be installed and configured
    - [This page may help you get up and running if you're not already.](https://codeigniter4.github.io/userguide/installation/index.html)
    
-If you would like to use the database logs to log API events, then the [Monolog PSR-3 logging library](https://github.com/Seldaek/monolog) is required [and installed if not already included in your project].
+If you would like to use the database logs to log API events, then the [Monolog PSR-3 logging library](https://github.com/Seldaek/monolog) is required and installed via
+```
+"scripts": {
+    "post-install-cmd": "composer install monolog/monolog"
+  }
+```
 
 # Features
 The features included in this module are:  
