@@ -3,9 +3,8 @@
     /**
      * Class BaseFilter
      *
-     * A base filter class that loads and instantiates the modules
-     * configuration for any subsequent filter classes that extend
-     * this base class.
+     * A base filter class to extend that gives access to a config
+     * object to all child-filter classes that extend this class.
      *
      * @package RESTful\Filters
      */
