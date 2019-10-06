@@ -14,7 +14,7 @@
          *
          * @var string $table
          */
-        private $table = 'api_users';
+        private $table = 'api_logs';
 
         //--------------------------------------------------------------------
 
