@@ -32,13 +32,14 @@
          * @var array $corsDomains
          */
         public $corsDomains = [
-            'http://localhost/',
+            'http://localhost/'
         ];
 
         /**
          * Authentication options are:
 
          * 'none'|null -> Disabled
+         * 'digest'    -> Digest
          * 'basic'     -> Basic
          * 'jwt'       -> JWT
          *
@@ -47,7 +48,7 @@
         public $authType = 'none';
 
         /**
-         * An 'username' => 'password' array to be used with 'basic'
+         * A 'username' => 'password' array to be used with 'basic'
          * authentication
          *
          * @var array
