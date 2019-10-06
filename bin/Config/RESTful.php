@@ -23,7 +23,7 @@
          *
          * @var bool $enableCors
          */
-        public $enableCors = true;
+        public $enableCors = false;
 
         /**
          * An array of domains allowed to make requests when $enableCors
