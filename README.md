@@ -23,19 +23,12 @@ A huge thanks goes to these following developers and organizations. Without thei
 # Requirements
 This module requires CodeIgniter 4 to be installed and configured
    - [This page may help you get up and running if you're not already.](https://codeigniter4.github.io/userguide/installation/index.html)
-   
-If you would like to use the database logs to log API events, then the [Monolog PSR-3 logging library](https://github.com/Seldaek/monolog) is required and installed via
-```
-"scripts": {
-    "post-install-cmd": "composer install monolog/monolog"
-  }
-```
 
 # Features
 The features included in this module are:  
 
  - **Bin/Config** _[View Src Tree](https://github.com/jason-napolitano/RESTful/tree/master/bin/Config)_
-   - Default configuration files that you may copy to your projects `app/Config` directory for the modules
+   - Default configuration files that you will copy to your projects `app/Config` directory for the modules
    configuration
  - **Controller** _[View Src File](https://github.com/jason-napolitano/RESTful/blob/master/src/Controller.php)_
    - A basic controller that extends the `ResourceController` and bakes in a little bit more
@@ -62,12 +55,12 @@ The features included in this module are:
    - `RESTful\Services\Auth` contains authentication services which are called in the `AuthFilter` and can be called globally like so:
       - `$auth = \Config\Services::auth($type = 'none', $getShared = false); ` 
       - `$auth = service('auth', $type = 'none', $getShared = false); `
-        - Types included are `'basic'`, `'jwt'`, `'none'`/`null`
+        - Types included are `'basic'`, `digest` or `'jwt'`
     
 # Installation
 _NOTE: Please make sure to [install and configure CodeIgniter 4](#requirements) before performing the installation_
 
-## Require
+ 1. ## Require
  - Use composer to require the package:
  ```php
 $ cd path/to/project/root
@@ -83,7 +76,7 @@ _You may also add this to your `composer.json` like so:_
 ```
 _Then run `$ composer update` in your projects `ROOTPATH`_
 
-## Autoload
+ 2. ## Autoload
  - Add the following to the `$psr4` array in `app/Config/Autoload.php`:
 ```php
 $psr4 = [
@@ -92,16 +85,18 @@ $psr4 = [
 ]
 ```
 
-## Configure
- - Move the `bin/Config/RESTful.php` file to your projects `app/Config` directory. This is a required step to configure this module
- - Move the `bin/Config/RESTful.php` file to your projects `app/Config` directory. This is an opyional step to configure the JWT libraries default options
- - Move the `bin/Config/Filters.php` file to your projects `app/Config` directory or merge with the existing `Filters` file if desired
+ 3. ## Configure
+ - Move the contents of `bin/Config` to your projects `app/Config` and overwrite. You may also only merge the contents of `bin/Config/Filters.php` with your own if you've already got custom filters you don't want overwritten.
+ 
+**OPTIONAL** 
  - Configure your applications database settings in your applications `.env` file. This is optional if you plan to use Digest Authentication (coming soon)
  - From your projects `ROOTPATH`, run the `php spark migrate:latest -all` command. This is optional in order to populate your database with the correct tables for authentication and sessions.
 
 # Usage
  - Modify your newly moved `app/Config/RESTful.php` for the aforementioned features
    - _The documentation in the config file should be able to explain everything_
+ - Modify your newly moved `app/Config/JWT.php` for the JWT library
+   - _This file is needed for the JWT library configuration_
  - Modify your newly moved `app/Config/Filters.php` for the aforementioned filters
    - _You may also reference `bin/Config/Filters.php` and apply only what you'd like_
 
