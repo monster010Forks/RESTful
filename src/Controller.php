@@ -21,13 +21,6 @@
         protected $data = [];
 
         /**
-         * Database model object
-         *
-         * @var object $model
-         */
-        protected $model;
-
-        /**
          * CodeIgniter Session library
          *
          * @see Session::class
