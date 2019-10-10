@@ -66,9 +66,9 @@
                     $response
                         ->setJSON([
                             'message' => 'Requests from this host are not allowed',
-                            'status'  => HTTP_UNAUTHORIZED
+                            'status'  => 401
                         ])
-                        ->setStatusCode(HTTP_UNAUTHORIZED)
+                        ->setStatusCode(401)
                         ->send();
                     exit();
                 }
