@@ -1,5 +1,7 @@
 <?php namespace RESTful\Libraries\JWT {
 
+    use Config\JWT as UserConfig;
+    use RESTful\Config\JWT as DefaultConfig;
     use UnexpectedValueException;
     use DomainException;
 
@@ -15,6 +17,27 @@
      */
     class JWT
     {
+        /**
+         * @var DefaultConfig|UserConfig
+         */
+        private static $config;
+
+        /**
+         * JWT constructor.
+         */
+        public function __construct()
+        {
+            // Select which config file to use
+            class_exists(UserConfig::class)
+                ? $configClass = UserConfig::class
+                : $configClass = DefaultConfig::class; // Default Module Config
+
+            // Load the correct shared config class
+            self::$config = config($configClass, true);
+        }
+
+        // --------------------------------------------------------------------
+
         /**
          * Returns the JWT's payload as a php object
          *
@@ -64,7 +87,7 @@
          */
         public static function encode($payload, $key, $algorithm = null): string
         {
-            $algo          = $algorithm ?? (new \GetSparked\Config\JWT())->algorithm;
+            $algo          = $algorithm ?? self::$config->algorithm;
             $header        = array('typ' => 'JWT', 'alg' => $algo);
             $segments      = array();
             $segments[]    = self::urlSafeB64Encode(self::jsonEncode($header));
@@ -95,7 +118,7 @@
                 'HS512' => 'sha512',
             );
 
-            $algo = $method ?? (new \GetSparked\Config\JWT())->algorithm;
+            $algo = $method ?? self::$config->algorithm;
             if (empty($methods[$algo])) {
                 throw new DomainException('Algorithm not supported');
             }
