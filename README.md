@@ -94,6 +94,7 @@ $psr4 = [
 
 ## Configure
  - Move the `bin/Config/RESTful.php` file to your projects `app/Config` directory. This is a required step to configure this module
+ - Move the `bin/Config/RESTful.php` file to your projects `app/Config` directory. This is an opyional step to configure the JWT libraries default options
  - Move the `bin/Config/Filters.php` file to your projects `app/Config` directory or merge with the existing `Filters` file if desired
  - Configure your applications database settings in your applications `.env` file. This is optional if you plan to use Digest Authentication (coming soon)
  - From your projects `ROOTPATH`, run the `php spark migrate:latest -all` command. This is optional in order to populate your database with the correct tables for authentication and sessions.
