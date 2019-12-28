@@ -2,13 +2,14 @@
   "name": "jason-napolitano/restful",
   "type": "library",
   "description": "A REST based package for CodeIgniter 4!",
-  "homepage": "https://github.com/jason-napolitano/RESTful",
+  "homepage": "https://packagist.org/jason-napolitano/RESTful",
   "license": "MIT",
   "require": {
-    "php": ">=7.2"
+    "php": ">=7.2",
+    "nesbot/carbon": "2.28.*"
   },
   "suggest": {
-    "monolog/monolog": "2.0.*"
+    "monolog/monolog": "^2.0"
   },
   "autoload": {
     "psr-4": {
@@ -19,6 +20,10 @@
     "optimize-autoloader": true
   },
   "scripts": {
-    "post-install-cmd": "composer install monolog/monolog"
+    "post-install-cmd": [
+      "php -r \"copy('vendor/jason-napolitano/RESTful/bin/Config/RESTful.php', 'app/Config/RESTful.php');\"",
+      "php -r \"copy('vendor/jason-napolitano/RESTful/bin/Config/Filters.php', 'app/Config/Filters.php');\"",
+      "php -r \"copy('vendor/jason-napolitano/RESTful/bin/Config/JWT.php',     'app/Config/JWT.php');\""
+    ]
   }
 }
