@@ -1,42 +1,29 @@
 <?php namespace RESTful\Config {
 
-    use RESTful\Services\Auth\DigestAuth;
-    use RESTful\Services\Auth\BasicAuth;
     use CodeIgniter\Config\BaseService;
-    use RESTful\Services\Auth\JWTAuth;
 
     /**
-     * Class Services
+     * Services Class
      *
      * @package RESTful\Config
      */
     class Services extends BaseService
     {
         /**
-         * Auth service
+         * A JWT service method
          *
-         * @param string|null $type [options: basic|jwt|?none]
+         * @param bool $getShared
          *
-         * @return BasicAuth|JWTAuth|null
+         * @return \RESTful\Libraries\JWT\JWT
          */
-        public static function auth(?string $type = 'none')
+        public static function jwt(bool $getShared = true)
         {
-            switch ($type):
-                case 'basic':
-                    return new BasicAuth();
-                    break;
+            if ($getShared) {
+                return static::getSharedInstance('jwt');
+            }
 
-                case 'jwt':
-                    return new JWTAuth();
-                    break;
-
-                case 'none':
-                case null:
-                default:
-                    return null;
-                    break;
-
-            endswitch;
+            return new \RESTful\Libraries\JWT\JWT();
         }
     }
+
 }
