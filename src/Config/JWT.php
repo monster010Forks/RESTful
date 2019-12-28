@@ -23,7 +23,9 @@ class JWT
      * value unless absolutely required.
      *
      * OPTIONS:
-     *  -
+     *  - HS256 => sha256
+     *  - HS384 => sha384
+     *  - HS512 => sha512
      *
      * @var string $algorithm
      */
