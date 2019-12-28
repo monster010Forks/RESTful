@@ -4,7 +4,7 @@
  * Cadenas de idioma para respuestas HTTP.
  *
  * Úselo en cualquier lugar de la aplicación siempre que RESTful sea PSR4
- * autoload en app / Config / Autoload.php
+ * autoload en app/Config/Autoload.php
  *
  * USAGE:
  *  - lang('HTTP.200') // RESULTADO: The resource requested has responded successfully
