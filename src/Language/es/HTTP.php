@@ -6,7 +6,7 @@
  * Úselo en cualquier lugar de la aplicación siempre que RESTful sea PSR4
  * autoload en app/Config/Autoload.php
  *
- * USAGE:
+ * USAR:
  *  - lang('HTTP.200') // RESULTADO: The resource requested has responded successfully
  *  - lang('HTTP.404') // RESULTADO: The resource requested does not exist
  *
