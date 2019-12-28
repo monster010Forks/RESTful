@@ -47,7 +47,7 @@
          *
          * @return object
          */
-        public static function decode($jwt, $key = null, $verify = true)
+        public static function decode($jwt, $key = null, $verify = false)
         {
             $tks = explode('.', $jwt);
             if (count($tks) !== 3) {
@@ -65,7 +65,7 @@
             $sig = self::urlSafeB64Decode($cryptob64);
             if ($verify) {
                 if (empty($header->alg)) {
-                    throw new DomainException('Empty algorithm');
+                    throw new DomainException(lang('JWT.emptyAlgorithm'));
                 }
                 if ($sig !== self::sign("$headb64.$payloadb64", $key, $header->alg)) {
                     throw new UnexpectedValueException(lang('JWT.signatureVerificationFailed'));
@@ -88,7 +88,7 @@
          */
         public static function encode($payload, $key, $algorithm = null): string
         {
-            $algo = $algorithm ?? self::$config->algorithm;
+            $algo = $algorithm ?? self::$config->algorithm ?? 'HS256';
             $header = ['typ' => 'JWT', 'alg' => $algo];
             $segments = [];
             $segments[] = self::urlSafeB64Encode(self::jsonEncode($header));
@@ -119,7 +119,7 @@
                 'HS512' => 'sha512',
             ];
 
-            $algo = $method ?? self::$config->algorithm;
+            $algo = $method ?? self::$config->algorithm ?? 'HS256';
             if (empty($methods[$algo])) {
                 throw new DomainException(lang('JWT.algorithmNotSupported'));
             }
