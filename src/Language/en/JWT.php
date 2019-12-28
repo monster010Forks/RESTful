@@ -7,8 +7,7 @@
  * autoloaded in app/Config/Autoload.php
  *
  * USAGE:
- *  - lang('HTTP.200') // PRODUCES: The request has responded successfully
- *  - lang('HTTP.404') // PRODUCES: The requested resource does not exist
+ *  - lang('JWT.unknownJsonError') // PRODUCES: Unknown JSON error:
  *
  * @package      RESTful
  * @author       Jason Napolitano
