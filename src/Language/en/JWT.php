@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Language strings for HTTP responses.
+ * Language strings for the JWT library.
  *
  * Use anywhere in the application as long as RESTful is PSR4
  * autoloaded in app/Config/Autoload.php
