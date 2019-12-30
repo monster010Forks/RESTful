@@ -15,7 +15,10 @@
 
 // ----------------------------------------------------------------------------
 // If the function does not exist, let's create it!
-if (!function_exists('auth_service')) {
+use Config\RESTful as UserConfig;
+use RESTful\Config\RESTful as DefaultConfig;
+
+if (!function_exists('auth')) {
 
     /**
      * Initiate the auth service
@@ -28,9 +31,14 @@ if (!function_exists('auth_service')) {
      * @return mixed
      *
      */
-    function auth_service(string $type = null, bool $getShared = false)
+    function auth(string $type = null, bool $getShared = false)
     {
-        $config = config(\RESTful\Config\RESTful::class, false);
+        // Select which config file to use
+        class_exists(UserConfig::class)
+            ? $configClass = UserConfig::class
+            : $configClass = DefaultConfig::class; // Default Module Config
+
+        $config = config($configClass, false);
         return service('auth', $type ?? $config->authType, $getShared);
     }
 }
