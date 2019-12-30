@@ -51,10 +51,9 @@
         /**
          * Authentication options are:
 
-         * 'none'|null -> Disabled
-         * 'digest'    -> Digest
-         * 'basic'     -> Basic
-         * 'jwt'       -> JWT
+         * 'none'  -> Disabled
+         * 'basic' -> Basic
+         * 'jwt'   -> JWT
          *
          * @var string|null $authType
          */
