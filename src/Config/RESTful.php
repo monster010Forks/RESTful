@@ -36,6 +36,19 @@
         ];
 
         /**
+         * Allowed methods
+         *
+         * @var array $allowedMethods
+         */
+        public $allowedMethods = [
+            'GET',
+            'POST',
+            'OPTIONS',
+            'PUT',
+            'DELETE'
+        ];
+
+        /**
          * Authentication options are:
 
          * 'none'|null -> Disabled
