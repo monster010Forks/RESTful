@@ -1,7 +1,7 @@
 <?php namespace RESTful\Models {
 
-    use CodeIgniter\Model;
     use RESTful\Entities\ApiKeys;
+    use RESTful\Model;
 
     /**
      * The UsersModel database model handles the delegation of data in
@@ -11,12 +11,17 @@
      */
     class UsersModel extends Model
     {
-        protected $table         = 'api_keys';
         protected $primaryKey    = 'id';
         protected $returnType    = ApiKeys::class;
         protected $useTimestamps = true;
         protected $createdField  = 'created_on';
         protected $updatedField  = 'updated_on';
         protected $dateFormat    = 'datetime';
+
+        public function __construct()
+        {
+            parent::__construct();
+            $this->table = $this->config->tables['users']?? 'api_users';
+        }
     }
 }

@@ -69,5 +69,17 @@
             'admin' => '12345678',
             'user'  => 'password'
         ];
+
+        /**
+         * Database tables for the RESTful module
+         *
+         * @var array $tables
+         */
+        public $tables = [
+            'users' => 'api_users', // Also can be null
+            'keys'  => 'api_keys',  // Also can be null
+            'logs'  => 'api_logs',  // Also can be null
+        ];
+
     }
 }

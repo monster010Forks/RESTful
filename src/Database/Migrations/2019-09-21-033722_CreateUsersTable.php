@@ -1,7 +1,5 @@
 <?php namespace RESTful\Database\Migrations {
 
-    use CodeIgniter\Database\Migration;
-
     /**
      * Class CreateUsersTable
      *
@@ -9,7 +7,13 @@
      */
     class CreateUsersTable extends Migration
     {
-        private $table = 'api_users';
+        private $table;
+
+        public function __construct()
+        {
+            parent::__construct();
+            $this->table = $this->config->tables['users']?? 'api_users';
+        }
 
         public function up()
         {

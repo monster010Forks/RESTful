@@ -1,7 +1,5 @@
 <?php namespace RESTful\Database\Migrations {
 
-    use CodeIgniter\Database\Migration;
-
     /**
      * Class CreateKeysTable
      *
@@ -9,7 +7,13 @@
      */
     class CreateKeysTable extends Migration
     {
-        private $table = 'api_keys';
+        private $table;
+
+        public function __construct()
+        {
+            parent::__construct();
+            $this->table = $this->config->tables['keys']?? 'api_keys';
+        }
 
         public function up()
         {

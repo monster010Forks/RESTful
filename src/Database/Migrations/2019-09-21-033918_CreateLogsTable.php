@@ -1,7 +1,5 @@
 <?php namespace RESTful\Database\Migrations {
 
-    use CodeIgniter\Database\Migration;
-
     /**
      * Class CreateLogsTable
      *
@@ -9,7 +7,13 @@
      */
     class CreateLogsTable extends Migration
     {
-        private $table = 'api_logs';
+        private $table;
+
+        public function __construct()
+        {
+            parent::__construct();
+            $this->table = $this->config->tables['logs']?? 'api_logs';
+        }
 
         public function up()
         {
