@@ -76,9 +76,10 @@
          * @var array $tables
          */
         public $tables = [
-            'users' => 'api_users', // Also can be null
-            'keys'  => 'api_keys',  // Also can be null
-            'logs'  => 'api_logs',  // Also can be null
+            'sessions' => 'api_sessions',
+            'users'    => 'api_users',
+            'keys'     => 'api_keys',
+            'logs'     => 'api_logs',
         ];
 
     }
