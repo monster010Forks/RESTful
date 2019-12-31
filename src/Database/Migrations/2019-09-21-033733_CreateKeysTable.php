@@ -43,8 +43,22 @@
                     'type' => 'TEXT',
                     'null' => true,
                 ],
-                'date_created'   => [
-                    'type' => 'INT(11)',
+
+                // TIMESTAMPS
+                'created_on' => [
+                    'type'       => 'datetime',
+                    'null'       => false,
+                    'default'    => 0
+                ],
+                'updated_on' => [
+                    'type'       => 'datetime',
+                    'null'       => true,
+                    'default'    => 0
+                ],
+                'deleted_on' => [
+                    'type'       => 'datetime',
+                    'null'       => true,
+                    'default'    => 0
                 ],
             ]);
             $this->forge->addKey('id', true);
