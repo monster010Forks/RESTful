@@ -21,7 +21,7 @@ A huge thanks goes to these following developers and organizations. Without thei
 |     Lonnie Ezell     | [Github](https://github.com/lonnieezell)  |
 
 # Requirements
-This module requires CodeIgniter 4 to be installed and configured
+This module requires CodeIgniter 4 to be installed and configured and running on PHP >=7.4.0
    - [This page may help you get up and running if you're not already.](https://codeigniter4.github.io/userguide/installation/index.html)
 
 # Features

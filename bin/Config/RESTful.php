@@ -16,14 +16,14 @@
          *
          * @var bool $ajaxOnly
          */
-        public $ajaxOnly = false;
+        public bool $ajaxOnly = false;
 
         /**
          * Enable CORS?
          *
          * @var bool $enableCors
          */
-        public $enableCors = false;
+        public bool $enableCors = false;
 
         /**
          * An array of domains allowed to make requests when $enableCors
@@ -31,7 +31,7 @@
          *
          * @var array $corsDomains
          */
-        public $corsDomains = [
+        public array $corsDomains = [
             'http://localhost/'
         ];
 
@@ -40,7 +40,7 @@
          *
          * @var array $allowedMethods
          */
-        public $allowedMethods = [
+        public array $allowedMethods = [
             'GET',
             'POST',
             'OPTIONS',
@@ -57,7 +57,7 @@
          *
          * @var string|null $authType
          */
-        public $authType = 'none';
+        public string $authType = 'none';
 
         /**
          * A 'username' => 'password' array to be used with 'basic'
@@ -65,7 +65,7 @@
          *
          * @var array
          */
-        public $users = [
+        public array $users = [
             'admin' => '12345678',
             'user'  => 'password'
         ];
@@ -75,7 +75,7 @@
          *
          * @var array $tables
          */
-        public $tables = [
+        public array $tables = [
             'sessions' => 'api_sessions',
             'users'    => 'api_users',
             'keys'     => 'api_keys',

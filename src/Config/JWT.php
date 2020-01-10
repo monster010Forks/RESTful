@@ -17,7 +17,7 @@
          *
          * @var string $secretKey
          */
-        public $secretKey = 'super-secret-key';
+        public string $secretKey = 'super-secret-key';
 
         /**
          * Library-wide hashing algorithm. This is the default
@@ -31,6 +31,6 @@
          *
          * @var string $algorithm
          */
-        public $algorithm = 'HS256';
+        public string $algorithm = 'HS256';
     }
 }
