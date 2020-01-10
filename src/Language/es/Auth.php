@@ -15,5 +15,8 @@
  * @link         https://github.com/jason-napolitano/restful
  */
 return [
-    'userAlreadyExists' => 'Esta cuenta de usuario ya existe'
+    'invalidPassword'   => 'La contraseña provista es incorrecta',
+    'userAlreadyExists' => 'Esta cuenta de usuario ya existe',
+    'userDoesNotExist'  => 'Esta cuenta de usuario no existe.',
+    'emailIsNotValid'   => 'El correo electrónico proporcionado no es válido.',
 ];
