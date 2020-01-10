@@ -64,10 +64,6 @@
 
             // Load the correct shared config class
             $this->config = config($configClass, true);
-
-            // Set Access-Control-Allow-Methods
-            $header = implode(',', $this->config->allowedMethods);
-            $this->response->setHeader('Access-Control-Allow-Methods', strtoupper($header));
         }
 
         // --------------------------------------------------------------------
