@@ -15,12 +15,12 @@
  * @link         https://github.com/jason-napolitano/restful
  */
 return [
-    '102' => 'This request is currently processing',
-    '200' => 'This request has responded successfully',
+    '102' => 'The request is currently processing',
+    '200' => 'The request has responded successfully',
     '201' => 'This resource was created successfully',
-    '204' => 'This request was successful with no content returned',
+    '204' => 'The request was successful with no content returned',
     '301' => 'This resource has been permanently moved',
-    '400' => 'This request made to this resource was not correct',
+    '400' => 'The request made to this resource was not correct',
     '401' => 'You are unauthorized to view this resource',
     '402' => 'Payment is required before you may proceed',
     '403' => 'Access to this resource is forbidden',
