@@ -11,6 +11,9 @@
      * A Filter class to handle AJAX requests
      *
      * @package RESTful\Filters
+     *
+     * @author   Jason Napolitano <jnapolitanoit@gmail.com>
+     * @updated  Jan 16th, 2020
      */
     class AjaxFilter extends BaseFilter implements FilterInterface
     {

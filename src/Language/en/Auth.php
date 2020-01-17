@@ -10,9 +10,11 @@
  *  - lang('Auth.invalidPassword')   // PRODUCES: The password provided is incorrect
  *  - lang('Auth.userAlreadyExists') // PRODUCES: This user account already exists
  *
- * @package      RESTful
- * @author       Jason Napolitano
- * @link         https://github.com/jason-napolitano/restful
+ * @package  RESTful\Language
+ *
+ * @author   Jason Napolitano <jnapolitanoit@gmail.com>
+ * @updated  Jan 16th, 2020
+ * @link     https://github.com/jason-napolitano/restful
  */
 return [
     'invalidPassword'   => 'The password provided is incorrect',

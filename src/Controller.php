@@ -10,6 +10,9 @@
      * Class Controller
      *
      * @package RESTful
+     *
+     * @author   Jason Napolitano <jnapolitanoit@gmail.com>
+     * @updated  Jan 16th, 2020
      */
     class Controller extends ResourceController
     {

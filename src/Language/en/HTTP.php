@@ -10,9 +10,11 @@
  *  - lang('HTTP.200') // PRODUCES: The request has responded successfully
  *  - lang('HTTP.404') // PRODUCES: The requested resource does not exist
  *
- * @package      RESTful
- * @author       Jason Napolitano
- * @link         https://github.com/jason-napolitano/restful
+ * @package  RESTful\Language
+ *
+ * @author   Jason Napolitano <jnapolitanoit@gmail.com>
+ * @updated  Jan 16th, 2020
+ * @link     https://github.com/jason-napolitano/restful
  */
 return [
     '102' => 'The request is currently processing',

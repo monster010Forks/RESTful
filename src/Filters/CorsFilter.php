@@ -12,6 +12,9 @@
      * A Filter class to handle CORS requests
      *
      * @package RESTful\Filters
+     *
+     * @author   Jason Napolitano <jnapolitanoit@gmail.com>
+     * @updated  Jan 16th, 2020
      */
     class CorsFilter extends BaseFilter implements FilterInterface
     {

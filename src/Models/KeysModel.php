@@ -8,6 +8,9 @@
      * the `api_keys` table
      *
      * @package RESTful\Models
+     *
+     * @author   Jason Napolitano <jnapolitanoit@gmail.com>
+     * @updated  Jan 16th, 2020
      */
     class KeysModel extends Model
     {

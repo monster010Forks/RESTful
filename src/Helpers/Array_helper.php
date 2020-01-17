@@ -9,7 +9,7 @@
  *
  * @package  RESTful\Helpers
  * @author   Jason Napolitano <jnapolitanoit@gmail.com>
- * @updated  09.21.2019
+ * @updated  Jan 16th, 2020
  *
  */
 

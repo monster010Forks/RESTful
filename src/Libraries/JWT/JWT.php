@@ -9,7 +9,12 @@
      * Library for a JSON Web Token implementation based on the JWT Spec
      *
      * @link     https://tools.ietf.org/html/rfc7519
+     * @link     https://github.com/luciferous/jwt
+     *
+     * @author   Luciferous
      * @author   Jason Napolitano <jnapolitanoit@gmail.com>
+     * @updated  Jan 16th, 2020
+     *
      * @license  MIT
      *
      * Read about the JWT Specification Here

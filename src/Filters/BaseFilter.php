@@ -10,6 +10,9 @@
      * object to all child-filter classes that extend this class.
      *
      * @package RESTful\Filters
+     *
+     * @author   Jason Napolitano <jnapolitanoit@gmail.com>
+     * @updated  Jan 16th, 2020
      */
     class BaseFilter
     {
