@@ -3,19 +3,19 @@
 /**
  * This is a helper file that helps with strings
  *
+ * @link     https://codeigniter4.github.io/CodeIgniter4/general/helpers.html
+ * @link     https://opensource.org/licenses/MIT
+ * @license  MIT License
+ *
  * @package  RESTful\Helpers
  * @author   Jason Napolitano <jnapolitanoit@gmail.com>
  * @updated  09.21.2019
  *
- * @license  MIT License
- *
- * @link     https://codeigniter4.github.io/CodeIgniter4/general/helpers.html
- * @link     https://opensource.org/licenses/MIT
  */
 
 // ----------------------------------------------------------------------------
 // If the function does not exist, let's create it!
-if (!function_exists('strstr_after')) {
+if ( ! function_exists('strstr_after') ) {
     /**
      * A customized PHP strstr() function that checks after the $haystack
      *
@@ -29,16 +29,16 @@ if (!function_exists('strstr_after')) {
      */
     function strstr_after($haystack, $needle, bool $case_insensitive = false)
     {
-        $strpos = $case_insensitive ? 'stripos': 'strpos';
-        $pos    = $strpos($haystack, $needle);
+        $strpos = $case_insensitive ? 'stripos' : 'strpos';
+        $pos = $strpos($haystack, $needle);
 
-        return is_int($pos) ? substr($haystack, $pos + strlen($needle)): $pos;
+        return is_int($pos) ? substr($haystack, $pos + strlen($needle)) : $pos;
     }
 }
 
 // ----------------------------------------------------------------------------
 // If the function does not exist, let's create it!
-if (!function_exists('contains_substr')) {
+if ( ! function_exists('contains_substr') ) {
     /**
      * Check if a string contains a substr()
      *
@@ -52,13 +52,13 @@ if (!function_exists('contains_substr')) {
      */
     function contains_substr(string $mainStr, string $subStr, bool $loc = false): bool
     {
-        if ($loc === false) {
+        if ( $loc === false ) {
             return (strpos($mainStr, $subStr) !== false);
         }
-        if (strlen($mainStr) < strlen($subStr)) {
+        if ( strlen($mainStr) < strlen($subStr) ) {
             return false;
         }
-        if (($loc + strlen($subStr)) > strlen($mainStr)) {
+        if ( ($loc + strlen($subStr)) > strlen($mainStr) ) {
             return false;
         }
 
@@ -68,7 +68,7 @@ if (!function_exists('contains_substr')) {
 
 // ----------------------------------------------------------------------------
 // If the function does not exist, let's create it!
-if (!function_exists('str_random')) {
+if ( ! function_exists('str_random') ) {
     /**
      * Generates a pseudo-random v4 UUID string
      *
@@ -81,24 +81,24 @@ if (!function_exists('str_random')) {
         return sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
 
             // 32 bits for "time_low"
-            random_int(0, 0xffff),
-            random_int(0, 0xffff),
+                       random_int(0, 0xffff),
+                       random_int(0, 0xffff),
 
             // 16 bits for "time_mid"
-            random_int(0, 0xffff),
+                       random_int(0, 0xffff),
 
             // 16 bits for "time_hi_and_version", four most significant bits
             // holds version number 4
-            random_int(0, 0x0fff) | 0x4000,
+                       random_int(0, 0x0fff) | 0x4000,
 
             // 16 bits, 8 bits for "clk_seq_hi_res", 8 bits for "clk_seq_low",
             // two most significant bits holds zero and one for variant DCE1.1
-            random_int(0, 0x3fff) | 0x8000,
+                       random_int(0, 0x3fff) | 0x8000,
 
             // 48 bits for "node"
-            random_int(0, 0xffff),
-            random_int(0, 0xffff),
-            random_int(0, 0xffff)
+                       random_int(0, 0xffff),
+                       random_int(0, 0xffff),
+                       random_int(0, 0xffff)
         );
     }
 }

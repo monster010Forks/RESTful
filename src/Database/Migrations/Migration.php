@@ -34,11 +34,11 @@
         /**
          * Perform a migration step.
          */
-        public function up() {}
+        public function up() { }
 
         /**
          * Revert a migration step.
          */
-        public function down() {}
+        public function down() { }
     }
 }

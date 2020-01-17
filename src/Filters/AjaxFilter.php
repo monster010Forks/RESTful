@@ -17,25 +17,25 @@
         /**
          * Before
          *
-         * @param  RequestInterface $request
+         * @param RequestInterface $request
          *
          * @return mixed|void
          */
         public function before(RequestInterface $request)
         {
             // If we only allow AJAX requests
-            if ($this->config->ajaxOnly === true) {
+            if ( $this->config->ajaxOnly === true ) {
                 // Shared response service
                 $response = \Config\Services::response();
                 // Is the request valid AJAX?
-                if ( ! $request->isAJAX()) {
+                if ( ! $request->isAJAX() ) {
                     // If not, generate the response
                     $response
                         ->setStatusCode(400)
-                        ->setJSON([ 
-                            'message' => 'Only valid AJAX requests are allowed',
-                            'status'  => 400
-                         ])
+                        ->setJSON([
+                                      'message' => 'Only valid AJAX requests are allowed',
+                                      'status'  => 400,
+                                  ])
                         ->send();
                     exit();
                 }
@@ -47,7 +47,7 @@
         /**
          * After
          *
-         * @param RequestInterface $request
+         * @param RequestInterface  $request
          * @param ResponseInterface $response
          *
          * @return mixed|void

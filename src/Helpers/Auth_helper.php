@@ -3,14 +3,14 @@
 /**
  * This is a helper file for the Authentication service
  *
+ * @link     https://codeigniter4.github.io/CodeIgniter4/general/helpers.html
+ * @link     https://opensource.org/licenses/MIT
+ * @license  MIT License
+ *
  * @package  RESTful\Helpers
  * @author   Jason Napolitano <jnapolitanoit@gmail.com>
  * @updated  09.21.2019
  *
- * @license  MIT License
- *
- * @link     https://codeigniter4.github.io/CodeIgniter4/general/helpers.html
- * @link     https://opensource.org/licenses/MIT
  */
 
 // ----------------------------------------------------------------------------
@@ -18,15 +18,15 @@
 use Config\RESTful as UserConfig;
 use RESTful\Config\RESTful as DefaultConfig;
 
-if (!function_exists('auth')) {
+if ( ! function_exists('auth') ) {
 
     /**
      * Initiate the auth service
      *
      * @see \RESTful\Config\Services::auth()
      *
-     * @param string $type       'none'|'basic'|'jwt'|null
-     * @param bool $getShared    Retrieve a shared instance?
+     * @param string $type      'none'|'basic'|'jwt'|null
+     * @param bool   $getShared Retrieve a shared instance?
      *
      * @return mixed
      *

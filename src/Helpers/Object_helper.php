@@ -3,19 +3,19 @@
 /**
  * This is a helper file that helps with objects and classes
  *
+ * @link     https://codeigniter4.github.io/CodeIgniter4/general/helpers.html
+ * @link     https://opensource.org/licenses/MIT
+ * @license  MIT License
+ *
  * @package  RESTful\Helpers
  * @author   Jason Napolitano <jnapolitanoit@gmail.com>
  * @updated  09.21.2019
  *
- * @license  MIT License
- *
- * @link     https://codeigniter4.github.io/CodeIgniter4/general/helpers.html
- * @link     https://opensource.org/licenses/MIT
  */
 
 // ----------------------------------------------------------------------------
 // If the function does not exist, let's create it!
-if (!function_exists('get_namespace')) {
+if ( ! function_exists('get_namespace') ) {
     /**
      * Retrieves the namespace for a provided class
      *
@@ -35,7 +35,7 @@ if (!function_exists('get_namespace')) {
 
 // ----------------------------------------------------------------------------
 // If the function does not exist, let's create it!
-if (!function_exists('get_fqcn')) {
+if ( ! function_exists('get_fqcn') ) {
     /**
      * Retrieves the FQCN for a provided class
      *
@@ -55,7 +55,7 @@ if (!function_exists('get_fqcn')) {
 
 // ----------------------------------------------------------------------------
 // If the function does not exist, let's create it!
-if (!function_exists('get_class_path')) {
+if ( ! function_exists('get_class_path') ) {
     /**
      * Determine file path of a class
      *
@@ -74,7 +74,7 @@ if (!function_exists('get_class_path')) {
 
 // ----------------------------------------------------------------------------
 // If the function does not exist, let's create it!
-if (!function_exists('load_from_class')) {
+if ( ! function_exists('load_from_class') ) {
 
     /**
      * A utility function for loading the values of class properties
@@ -93,12 +93,12 @@ if (!function_exists('load_from_class')) {
         $newClass = new $class();
 
         // If $item is a property in $class
-        if (!method_exists($class, $item) && property_exists($class, $item)) {
+        if ( ! method_exists($class, $item) && property_exists($class, $item) ) {
             // Return its value
             return $newClass->$item;
 
             // If $item is a method in $class
-        } elseif (!property_exists($class, $item) && method_exists($class, $item)) {
+        } else if ( ! property_exists($class, $item) && method_exists($class, $item) ) {
             // Return its value
             return $newClass->$item();
 

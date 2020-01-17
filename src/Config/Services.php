@@ -18,7 +18,7 @@
          */
         public static function jwt(bool $getShared = true)
         {
-            if ($getShared) {
+            if ( $getShared ) {
                 return static::getSharedInstance('jwt');
             }
 

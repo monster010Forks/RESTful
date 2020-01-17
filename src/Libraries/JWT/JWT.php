@@ -8,12 +8,12 @@
     /**
      * Library for a JSON Web Token implementation based on the JWT Spec
      *
-     * @category RESTful\Libraries\JWT
+     * @link     https://tools.ietf.org/html/rfc7519
      * @author   Jason Napolitano <jnapolitanoit@gmail.com>
      * @license  MIT
      *
      * Read about the JWT Specification Here
-     * @link     https://tools.ietf.org/html/rfc7519
+     * @category RESTful\Libraries\JWT
      */
     class JWT
     {
@@ -50,24 +50,24 @@
         public static function decode($jwt, $key = null, $verify = false)
         {
             $tks = explode('.', $jwt);
-            if (count($tks) !== 3) {
+            if ( count($tks) !== 3 ) {
                 throw new UnexpectedValueException(lang('JWT.wrongNumberOfSegments'));
             }
             [$headb64, $payloadb64, $cryptob64] = $tks;
-            if (null === ($header = self::jsonDecode(self::urlSafeB64Decode($headb64)))
+            if ( null === ($header = self::jsonDecode(self::urlSafeB64Decode($headb64)))
             ) {
                 throw new UnexpectedValueException(lang('JWT.invalidSegmentEncoding'));
             }
-            if (null === $payload = self::jsonDecode(self::urlSafeB64Decode($payloadb64))
+            if ( null === $payload = self::jsonDecode(self::urlSafeB64Decode($payloadb64))
             ) {
                 throw new UnexpectedValueException(lang('JWT.invalidSegmentEncoding'));
             }
             $sig = self::urlSafeB64Decode($cryptob64);
-            if ($verify) {
-                if (empty($header->alg)) {
+            if ( $verify ) {
+                if ( empty($header->alg) ) {
                     throw new DomainException(lang('JWT.emptyAlgorithm'));
                 }
-                if ($sig !== self::sign("$headb64.$payloadb64", $key, $header->alg)) {
+                if ( $sig !== self::sign("$headb64.$payloadb64", $key, $header->alg) ) {
                     throw new UnexpectedValueException(lang('JWT.signatureVerificationFailed'));
                 }
             }
@@ -120,7 +120,7 @@
             ];
 
             $algo = $method ?? self::$config->algorithm ?? 'HS256';
-            if (empty($methods[$algo])) {
+            if ( empty($methods[$algo]) ) {
                 throw new DomainException(lang('JWT.algorithmNotSupported'));
             }
 
@@ -139,9 +139,9 @@
         public static function jsonDecode($input)
         {
             $obj = json_decode($input, true, 512, JSON_THROW_ON_ERROR);
-            if (function_exists('json_last_error') && $errno = json_last_error()) {
+            if ( function_exists('json_last_error') && $errno = json_last_error() ) {
                 self::handleJsonError($errno);
-            } elseif ($obj === null && $input !== 'null') {
+            } else if ( $obj === null && $input !== 'null' ) {
                 throw new DomainException(lang('JWT.nullResultWithNonNullInput'));
             }
 
@@ -160,9 +160,9 @@
         public static function jsonEncode($input): string
         {
             $json = json_encode($input, JSON_THROW_ON_ERROR, 512);
-            if (function_exists('json_last_error') && $errno = json_last_error()) {
+            if ( function_exists('json_last_error') && $errno = json_last_error() ) {
                 self::handleJsonError($errno);
-            } elseif ($json === 'null' && $input !== null) {
+            } else if ( $json === 'null' && $input !== null ) {
                 throw new DomainException(lang('JWT.nullResultWithNonNullInput'));
             }
 
@@ -181,7 +181,7 @@
         public static function urlSafeB64Decode($input): string
         {
             $remainder = strlen($input) % 4;
-            if ($remainder) {
+            if ( $remainder ) {
                 $padlen = 4 - $remainder;
                 $input .= str_repeat('=', $padlen);
             }

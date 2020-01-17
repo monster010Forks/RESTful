@@ -32,7 +32,7 @@
          * @var array $corsDomains
          */
         public array $corsDomains = [
-            'http://localhost/'
+            'http://localhost/',
         ];
 
         /**
@@ -45,12 +45,11 @@
             'POST',
             'OPTIONS',
             'PUT',
-            'DELETE'
+            'DELETE',
         ];
 
         /**
          * Authentication options are:
-
          * 'none'  -> Disabled
          * 'basic' -> Basic
          * 'jwt'   -> JWT
@@ -67,7 +66,7 @@
          */
         public array $users = [
             'admin' => '12345678',
-            'user'  => 'password'
+            'user'  => 'password',
         ];
 
         /**

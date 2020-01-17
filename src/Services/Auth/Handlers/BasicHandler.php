@@ -1,7 +1,7 @@
 <?php namespace RESTful\Services\Auth\Handlers {
 
     use RESTful\Services\Auth\AuthInterface;
-    
+
     /**
      * The main library class for 'basic' authentication
      *

@@ -28,9 +28,9 @@
         /**
          * Was a user successfully authenticated?
          *
+         * @return bool
          * @var string $username
          *
-         * @return bool
          */
         public function isAuthenticated(string $username): bool;
 

@@ -6,6 +6,7 @@
   "license": "MIT",
   "require": {
     "php": ">=7.4",
+    "ext-json": "*",
     "codeigniter4/framework": "v4.0.0-rc.3",
     "nesbot/carbon": "2.28.*"
   },

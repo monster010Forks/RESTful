@@ -1,4 +1,4 @@
-<?php namespace RESTful\Services\Auth\Handlers{
+<?php namespace RESTful\Services\Auth\Handlers {
 
     use RESTful\Services\Auth\AuthInterface;
 
@@ -30,13 +30,15 @@
         public function destroy(): void
         {
             // TODO: Implement destroy() method.
-        }/**
-     * Was a user successfully authenticated?
-     *
-     * @return bool
-     * @var string $username
-     *
-     */
+        }
+
+        /**
+         * Was a user successfully authenticated?
+         *
+         * @return bool
+         * @var string $username
+         *
+         */
         public function isAuthenticated(string $username = null): bool
         {
             return false;

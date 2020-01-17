@@ -1,5 +1,5 @@
 <?php namespace RESTful\Filters {
-    
+
     use Config\RESTful as UserConfig;
     use RESTful\Config\RESTful as DefaultConfig;
 

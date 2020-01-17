@@ -3,19 +3,19 @@
 /**
  * This is the primary helper file for the RESTful module
  *
+ * @link     https://codeigniter4.github.io/CodeIgniter4/general/helpers.html
+ * @link     https://opensource.org/licenses/MIT
+ * @license  MIT License
+ *
  * @package  RESTful\Helpers
  * @author   Jason Napolitano <jnapolitanoit@gmail.com>
  * @updated  09.21.2019
  *
- * @license  MIT License
- *
- * @link     https://codeigniter4.github.io/CodeIgniter4/general/helpers.html
- * @link     https://opensource.org/licenses/MIT
  */
 
 // ----------------------------------------------------------------------------
 // If the function does not exist, let's create it!
-if (!function_exists('ci_version')) {
+if ( ! function_exists('ci_version') ) {
     /**
      * Equivalent to the CI_VERSION constant in CodeIgniter 3. Used to return the
      * current framework version.
@@ -30,7 +30,7 @@ if (!function_exists('ci_version')) {
 
 // ----------------------------------------------------------------------------
 // If the function does not exist, let's create it!
-if (!function_exists('is_ie')) {
+if ( ! function_exists('is_ie') ) {
     /**
      * Check if on Internet Explorer/IE Edge
      *
@@ -39,15 +39,15 @@ if (!function_exists('is_ie')) {
     function is_ie(): bool
     {
         return preg_match(
-                '~MSIE|Internet Explorer~i',
-                $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false
-            );
+                   '~MSIE|Internet Explorer~i',
+                   $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false
+               );
     }
 }
 
 // ----------------------------------------------------------------------------
 // If the function does not exist, let's create it!
-if (!function_exists('is_iis')) {
+if ( ! function_exists('is_iis') ) {
     /**
      * Check if on a Windows IIS Server
      *
@@ -62,7 +62,7 @@ if (!function_exists('is_iis')) {
 
 // ----------------------------------------------------------------------------
 // If the function does not exist, let's create it!
-if (!function_exists('is_countable')) {
+if ( ! function_exists('is_countable') ) {
 
     /**
      * A polyfill for PHP 7.3's is_countable() function
