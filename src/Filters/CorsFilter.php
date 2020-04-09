@@ -66,13 +66,12 @@
                 // If we are not allowed
                 if ( ! $is_allowed ) {
                     // Send the response and exit
-                    $response
-                        ->setJSON([
-                                      'message' => 'Requests from this host are not allowed',
-                                      'status'  => 401,
-                                  ])
-                        ->setStatusCode(401)
-                        ->send();
+                    $response->setJSON([
+                        'message' => 'Requests from this host are not allowed',
+                        'status'  => 401,
+                    ]);
+                    $response->setStatusCode(401);
+                    $response->send();
                     exit();
                 }
             }
