@@ -33,13 +33,12 @@
                 // Is the request valid AJAX?
                 if ( ! $request->isAJAX() ) {
                     // If not, generate the response
-                    $response
-                        ->setStatusCode(400)
-                        ->setJSON([
-                            'message' => 'Only valid AJAX requests are allowed',
-                            'status'  => 400,
-                        ])
-                        ->send();
+                    $response->setJSON([
+                        'message' => 'Only valid AJAX requests are allowed',
+                        'status'  => 400,
+                    ]);
+                    $response->setStatusCode(400)
+                    $response->send();
                     exit();
                 }
             }
