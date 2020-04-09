@@ -36,9 +36,9 @@
                     $response
                         ->setStatusCode(400)
                         ->setJSON([
-                                      'message' => 'Only valid AJAX requests are allowed',
-                                      'status'  => 400,
-                                  ])
+                            'message' => 'Only valid AJAX requests are allowed',
+                            'status'  => 400,
+                        ])
                         ->send();
                     exit();
                 }
