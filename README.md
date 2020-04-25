@@ -68,11 +68,14 @@ $ composer require jason-napolitano/restful
 ```
 
  2. ## Autoload
- - Add the following to the `$psr4` array in `app/Config/Autoload.php`:
+ - Add the package to the `$psr4` array in `app/Config/Autoload.php`:
 ```php
 $psr4 = [
-    // OTHER PSR-4 ENTRIES ...
+    // RESTful Library
     'RESTful' => ROOTPATH . 'vendor/jason-napolitano/restful/src',
+
+    // OTHER ENTRIES 
+    // ...
 ]
 ```
 
@@ -81,7 +84,7 @@ $psr4 = [
  
 **OPTIONAL** 
  - Configure your applications database settings in your applications `.env` file. This is optional if you plan to use Digest Authentication (coming soon)
- - From your projects `ROOTPATH`, run the `php spark migrate:latest -all` command. This is optional in order to populate your database with the correct tables for authentication and sessions.
+ - From your projects `ROOTPATH`, run the `php spark migrate:latest -n RESTful` command. This is optional in order to populate your database with the correct tables for authentication and sessions.
 
 # Usage
  - Modify your newly moved `app/Config/RESTful.php` for the aforementioned features
