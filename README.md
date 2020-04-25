@@ -70,7 +70,7 @@ _You may also add this to your `composer.json` like so:_
 ```json
 {
     "require": {
-        "jason-napolitano/restful": "0.5"
+        "jason-napolitano/restful": "0.9"
     }
 }
 ```
