@@ -53,9 +53,9 @@ The features included in this module are:
      
  - **Services**: _[View Src Tree](https://github.com/jason-napolitano/RESTful/tree/master/src/Services)_
    - `RESTful\Services\Auth` contains authentication services which are called in the `AuthFilter` and can be called globally like so:
-      - `$auth = \Config\Services::auth($type = 'none', $getShared = false); ` 
-      - `$auth = service('auth', $type = 'none', $getShared = false); `
-        - Types included are `'basic'`, `digest` or `'jwt'`
+      - `$auth = \Config\Services::auth($type = 'basic|digest|jwt|none', $getShared = false); ` 
+      - `$auth = service('auth', $type = 'basic|digest|jwt|none', $getShared = false); `
+      - `$auth = auth($type = 'basic|digest|jwt|none', $getShared = true)`
     
 # Installation
 _NOTE: Please make sure to [install and configure CodeIgniter 4](#requirements) before performing the installation_
