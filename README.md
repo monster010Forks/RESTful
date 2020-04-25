@@ -66,15 +66,6 @@ _NOTE: Please make sure to [install and configure CodeIgniter 4](#requirements) 
 $ cd path/to/project/root
 $ composer require jason-napolitano/restful
 ```
-_You may also add this to your `composer.json` like so:_
-```json
-{
-    "require": {
-        "jason-napolitano/restful": "0.9"
-    }
-}
-```
-_Then run `$ composer update` in your projects `ROOTPATH`_
 
  2. ## Autoload
  - Add the following to the `$psr4` array in `app/Config/Autoload.php`:
