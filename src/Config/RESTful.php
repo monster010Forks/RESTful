@@ -4,7 +4,8 @@
     use CodeIgniter\Config\BaseConfig;
 
     /**
-     * Class RESTful
+     * RESTful Library Class - The main class file for the RESTful libraries
+     * configuration.
      *
      * @package RESTful\Config
      *
@@ -22,7 +23,9 @@
         public bool $ajaxOnly = false;
 
         /**
-         * Enable CORS?
+         * Do we want to do a CORS check? If set to true, only
+         * hosts that are inside of the $corsDomains array will
+         * be allowed to make requests
          *
          * @var bool $enableCors
          */
@@ -39,7 +42,8 @@
         ];
 
         /**
-         * Allowed methods
+         * Allowed methods - Only the following types of request
+         * methods will be allowed
          *
          * @var array $allowedMethods
          */
@@ -52,6 +56,9 @@
         ];
 
         /**
+         * API Authentication type. Which type of authentication would 
+         * you like to use?
+         *
          * Authentication options are:
          * 'none'  -> Disabled
          * 'basic' -> Basic
@@ -62,8 +69,8 @@
         public string $authType = 'none';
 
         /**
-         * A 'username' => 'password' array to be used with 'basic'
-         * authentication
+         * A 'username' => 'password' array to be used if the
+         * above $authType variable is set to 'basic'
          *
          * @var array
          */
@@ -73,7 +80,7 @@
         ];
 
         /**
-         * Database tables for the RESTful module
+         * Database tables for the RESTful library
          *
          * @var array $tables
          */
